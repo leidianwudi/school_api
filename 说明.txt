@@ -1,0 +1,16 @@
+执行  npm install apidoc -g 后才能使用脚本自动生成文档说明
+
+
+http://api.20190518.net/storage/app/public/bonSKu5SgDtV7C2mCNZEWZ36OtsIDm5dMKPhahHa.png
+
+http://192.168.3.229/storage/KXpTg12swYxAEr7NUShqVWIog1ZgtWrPmTwkpmq9.png
+
+http://192.168.3.229:8021/public/cache/Wx4R63yl5dWIG59hXvFlNODFE9j9cUzRWWdgUUH2.png
+
+
+瓜聊(企业im)
+主页：https://goubuli.mobi
+测试手机号 13900000000-13900000009 验证码:111111
+
+http:\/\/192.168.3.229:8021\/storage\/cache\/201912061059429775961410.png
+http://192.168.3.229:8021/storage/cache/201912061059429775961410.png
