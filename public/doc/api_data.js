@@ -18,5 +18,52 @@ define({ "api": [
     "version": "0.0.0",
     "filename": "app/Http/Controllers/External/UploadFileController.php",
     "groupTitle": "file"
+  },
+  {
+    "type": "post",
+    "url": "school/getSchool",
+    "title": "查询学校",
+    "name": "getSchool",
+    "description": "<p>根据名称和页数查询学校</p>",
+    "group": "school",
+    "parameter": {
+      "fields": {
+        "Parameter": [
+          {
+            "group": "Parameter",
+            "type": "string",
+            "optional": true,
+            "field": "school",
+            "description": "<p>学校名称</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "int",
+            "optional": false,
+            "field": "page",
+            "description": "<p>第几页</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "int",
+            "optional": false,
+            "field": "count",
+            "description": "<p>每页记录数</p>"
+          }
+        ]
+      }
+    },
+    "success": {
+      "examples": [
+        {
+          "title": "返回数据",
+          "content": "{\n\"school\": \"中国地质大学(北京)\"  //学校名称\n}",
+          "type": "json"
+        }
+      ]
+    },
+    "version": "0.0.0",
+    "filename": "app/Http/Controllers/School/SchoolController.php",
+    "groupTitle": "school"
   }
 ] });

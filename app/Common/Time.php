@@ -89,6 +89,13 @@ class Time
         return microtime(true);
     }
 
+    //获取当前毫秒时间搓  1586160271537 格式
+    public static function getMicroTimeNow2() {
+        list($msec, $sec) = explode(' ', microtime());
+        return (float)sprintf('%.0f', (floatval($msec) + floatval($sec)) * 1000);
+    }
+
+
     //返回今天的开始时间戳
     public static function getTodayTimeBegin()
     {
@@ -126,6 +133,13 @@ class Time
     {
         //date_default_timezone_set('PRC');
         return date('Y-m-d H:i:s', $time);
+    }
+
+    //把字符串时间格式化
+    public static function timeFormat(string $time): string
+    {
+        $val  = self::getTime($time);//时间
+        return self::getDateYMD_HIS($val);
     }
 
     //取显示的 年月日全格式
