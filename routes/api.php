@@ -43,3 +43,9 @@ Route::group(['prefix' => 'school', 'namespace' => 'School'], function()
     Route::post('getSubject2',      'SchoolController@getSubject2');    //查询再选科目
 });
 
+//课程
+Route::group(['prefix' => 'subject', 'namespace' => 'Subject'], function()
+{
+    Route::post('getSubject',        'SubjectController@getSubject');      //查询可选的课程
+});
+

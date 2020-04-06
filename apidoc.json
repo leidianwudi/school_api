@@ -1,5 +1,5 @@
 {
-  "name": "im文档api",
+  "name": "school文档api",
   "version": "1.0.0",
   "description": "所有接口返回值code:0代表成功(简单接口返回内容文档不重复写)，非0是执行失败，msg:失败具体原因",
   "title": "im",
