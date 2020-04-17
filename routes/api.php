@@ -46,6 +46,8 @@ Route::group(['prefix' => 'school', 'namespace' => 'School'], function()
 //课程
 Route::group(['prefix' => 'subject', 'namespace' => 'Subject'], function()
 {
-    Route::post('getSubject',        'SubjectController@getSubject');      //查询可选的课程
+    Route::post('getSubject',        'SubjectController@getSubject');            //查询可选的课程
+    Route::post('getProfessionPer',  'SubjectController@getProfessionPer');      //按首选和再选科目统计
+    Route::post('getSubjectPer',     'SubjectController@getSubjectPer');         //按学校或专业统计百分比
 });
 

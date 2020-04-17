@@ -23,4 +23,18 @@ class SubjectCore
         $res = new ResultData();   //创建返回类
         return  $res->setData(Subject_modelSp::getSubject($in));
     }
+
+    //按首选和再选科目统计符合条件的科目大类及所占百分比
+    public static function getProfessionPer(InGetSubject $in): ResultData
+    {
+        $res = new ResultData();   //创建返回类
+        return  $res->setData(Subject_modelSp::getProfessionPer($in));
+    }
+
+    //按学校或专业统计符合条件的首选再选科目及其百分比
+    public static function getSubjectPer(InGetSubject $in): ResultData
+    {
+        $res = new ResultData();   //创建返回类
+        return  $res->setData(Subject_modelSp::getSubjectPer($in));
+    }
 }
