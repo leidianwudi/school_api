@@ -21,6 +21,67 @@
   },
   {
     "type": "post",
+    "url": "school/getMenke",
+    "title": "查询学类",
+    "name": "getMenke",
+    "description": "<p>根据名称和页数查询学校</p>",
+    "group": "school",
+    "parameter": {
+      "fields": {
+        "Parameter": [
+          {
+            "group": "Parameter",
+            "type": "string",
+            "optional": true,
+            "field": "school",
+            "description": "<p>学校名称</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "string",
+            "optional": true,
+            "field": "menke",
+            "description": "<p>学类</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "string",
+            "optional": true,
+            "field": "profession",
+            "description": "<p>专业名称</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "int",
+            "optional": false,
+            "field": "page",
+            "description": "<p>第几页</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "int",
+            "optional": false,
+            "field": "count",
+            "description": "<p>每页记录数</p>"
+          }
+        ]
+      }
+    },
+    "success": {
+      "examples": [
+        {
+          "title": "返回数据",
+          "content": "{\n\"menke\": \"\"  //学类\n}",
+          "type": "json"
+        }
+      ]
+    },
+    "version": "0.0.0",
+    "filename": "app/Http/Controllers/School/SchoolController.php",
+    "groupTitle": "school"
+  },
+  {
+    "type": "post",
     "url": "school/getProfession",
     "title": "查询专业",
     "name": "getProfession",
@@ -282,6 +343,13 @@
             "group": "Parameter",
             "type": "string",
             "optional": true,
+            "field": "menke",
+            "description": "<p>学类，类别</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "string",
+            "optional": true,
             "field": "profession",
             "description": "<p>专业名称</p>"
           },
@@ -320,7 +388,7 @@
       "examples": [
         {
           "title": "返回数据",
-          "content": "{\n\"id\": 981,\n\"collectId\": 207369,\n\"school\": \"北京交通大学(威海校区)\",       //学校\n\"profession\": \"通信工程(中外合作办学)\",   //招生专业(类)\n\"professionSub\": \"\",                     //包含专业\n\"subject1\": \"仅物理\",                    //首选科目要求\n\"subject2\": \"不提再选科目要求\",           //再选科目要求\n\"updTime\": \"2019-08-05 12:11:52\"\n}",
+          "content": "{\n\"id\": 981,\n\"collectId\": 207369,\n\"school\": \"北京交通大学(威海校区)\",       //学校\n\"menke\": \"经济学\",                       //学类\n\"profession\": \"通信工程(中外合作办学)\",   //招生专业(类)\n\"professionSub\": \"\",                     //包含专业\n\"subject1\": \"仅物理\",                    //首选科目要求\n\"subject2\": \"不提再选科目要求\",           //再选科目要求\n\"updTime\": \"2019-08-05 12:11:52\"\n}",
           "type": "json"
         }
       ]
