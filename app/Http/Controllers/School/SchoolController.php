@@ -42,6 +42,28 @@ class SchoolController extends Controller
     }
 
     /**
+     * @api {post} school/getMenke 查询学类
+     * @apiName getMenke
+     * @apiDescription 根据名称和页数查询学校
+     * @apiGroup school
+     * @apiParam {string} [school]      学校名称
+     * @apiParam {string} [menke]       学类
+     * @apiParam {string} [profession]  专业名称
+     * @apiParam {int}  page            第几页
+     * @apiParam {int} count            每页记录数
+     * @apiSuccessExample {json} 返回数据
+    {
+    "menke": ""  //学类
+    }
+     */
+    public function getMenke(Request $rep)
+    {
+        $in = new InGetSchool();                   //创建请求对应数据类型
+        Util::getInputFromPost($rep, $in);         //取数据
+        return Response()->json(SchoolCore::getMenke($in));
+    }
+
+    /**
      * @api {post} school/getProfession 查询专业
      * @apiName getProfession
      * @apiDescription 根据名称和页数查询专业

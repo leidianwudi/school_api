@@ -21,14 +21,21 @@ class SchoolCore
     public static function getSchool(InGetSchool $in): ResultData
     {
         $res = new ResultData();   //创建返回类
-        return  $res->setData(Subject_modelSp::getSchool($in->school, $in->profession, $in->page, $in->count));
+        return  $res->setData(Subject_modelSp::getSchool($in->school, $in->menke, $in->profession, $in->page, $in->count));
+    }
+
+    //查询学类
+    public static function getMenke(InGetSchool $in): ResultData
+    {
+        $res = new ResultData();   //创建返回类
+        return  $res->setData(Subject_modelSp::getMenke($in->school, $in->menke, $in->profession, $in->page, $in->count));
     }
 
     //查询专业
     public static function getProfession(InGetSchool $in): ResultData
     {
         $res = new ResultData();   //创建返回类
-        return  $res->setData(Subject_modelSp::getProfession($in->school, $in->profession, $in->page, $in->count));
+        return  $res->setData(Subject_modelSp::getProfession($in->school, $in->menke, $in->profession, $in->page, $in->count));
     }
 
     //查询首选科目

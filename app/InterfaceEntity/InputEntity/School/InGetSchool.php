@@ -15,5 +15,6 @@ use App\InterfaceEntity\InputEntity\InPage;
 class InGetSchool extends InPage
 {
     public $school;     //学校名称
+    public $menke;      //学类
     public $profession; //专业名称
 }

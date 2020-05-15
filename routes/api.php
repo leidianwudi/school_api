@@ -38,6 +38,7 @@ Route::get('createAuto', 'AutoController@createAuto');
 Route::group(['prefix' => 'school', 'namespace' => 'School'], function()
 {
     Route::post('getSchool',        'SchoolController@getSchool');      //查询学校
+    Route::post('getMenke',         'SchoolController@getMenke');       //查询学类
     Route::post('getProfession',    'SchoolController@getProfession');  //查询专业
     Route::post('getSubject1',      'SchoolController@getSubject1');    //查询首选科目
     Route::post('getSubject2',      'SchoolController@getSubject2');    //查询再选科目

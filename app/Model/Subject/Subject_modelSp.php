@@ -23,19 +23,31 @@ class Subject_modelSp extends Subject_model
     }
 
     //查询学校
-    public static function getSchool($school, $profession, $page, $count)
+    public static function getSchool($school, $menke, $profession, $page, $count)
     {
         $query = self::query();
         if (!Util::isEmpty($school)) $query = $query->where("school", "like", "%".$school."%");
+        if (!Util::isEmpty($menke)) $query = $query->where("menke", $menke);
         if (!Util::isEmpty($profession)) $query = $query->where("profession", "like", "%".$profession."%");
         return $query->groupBy("school")->paginate($count, ["school"], "page", $page);
     }
 
-    //查询专业
-    public static function getProfession($school, $profession, $page, $count)
+    //查询学类
+    public static function getMenke($school, $menke, $profession, $page, $count)
     {
         $query = self::query();
         if (!Util::isEmpty($school)) $query = $query->where("school", "like", "%".$school."%");
+        if (!Util::isEmpty($menke)) $query = $query->where("menke", $menke);
+        if (!Util::isEmpty($profession)) $query = $query->where("profession", "like", "%".$profession."%");
+        return $query->groupBy("menke")->paginate($count, ["menke"], "page", $page);
+    }
+
+    //查询专业
+    public static function getProfession($school, $menke, $profession, $page, $count)
+    {
+        $query = self::query();
+        if (!Util::isEmpty($school)) $query = $query->where("school", "like", "%".$school."%");
+        if (!Util::isEmpty($menke)) $query = $query->where("menke", $menke);
         if (!Util::isEmpty($profession)) $query = $query->where("profession", "like", "%".$profession."%");
         return $query->groupBy("profession")->paginate($count, ["profession"], "page", $page);
     }
@@ -57,6 +69,7 @@ class Subject_modelSp extends Subject_model
     {
         $query = self::query();
         if (!Util::isEmpty($in->school)) $query = $query->where("school", "like", "%".$in->school."%");
+        if (!Util::isEmpty($in->menke)) $query = $query->where("menke", $in->menke);
         if (!Util::isEmpty($in->profession)) $query = $query->where("profession", "like", "%".$in->profession."%");
         if (!Util::isEmpty($in->subject1)) $query = $query->where("subject1", $in->subject1);
         if (!Util::isEmpty($in->subject2)) $query = $query->where("subject2", $in->subject2);
@@ -81,9 +94,10 @@ class Subject_modelSp extends Subject_model
         $count = self::query()->count();    //总数量
         $query = self::query();
         if (!Util::isEmpty($in->school)) $query = $query->where("school", $in->school);
+        if (!Util::isEmpty($in->menke)) $query = $query->where("menke", $in->menke);
         if (!Util::isEmpty($in->profession)) $query = $query->where("profession", $in->profession);
         return $query->groupBy(["subject1", "subject2"])->orderBy("sum", "desc")->paginate($in->count, DB::raw(
-            "subject1, subject2, count(*) as sum, count(*) * 100 / 26261 as per"
+            "subject1, subject2, count(*) as sum, count(*) * 100 / 22855 as per"
         ), "page", $in->page);
     }
 }

@@ -25,6 +25,7 @@ class SubjectController
      * @apiDescription 查询可选的专业课程
      * @apiGroup subject
      * @apiParam {string}  [school]     学校名称
+     * @apiParam {string}  [menke]      学类，类别
      * @apiParam {string}  [profession] 专业名称
      * @apiParam {string}  [subject1]   首选科目
      * @apiParam {string}  [subject2]   再选科目
@@ -35,6 +36,7 @@ class SubjectController
     "id": 981,
     "collectId": 207369,
     "school": "北京交通大学(威海校区)",       //学校
+    "menke": "经济学",                       //学类
     "profession": "通信工程(中外合作办学)",   //招生专业(类)
     "professionSub": "",                     //包含专业
     "subject1": "仅物理",                    //首选科目要求
